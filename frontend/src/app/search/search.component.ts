@@ -159,6 +159,7 @@ export class SearchComponent {
       .subscribe({
         next: (results) => {
           this.searchResults = results;
+          console.log('search results:', results);
           this.isLoading = false;
         },
         error: (err) => {

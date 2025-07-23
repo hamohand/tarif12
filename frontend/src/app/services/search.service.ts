@@ -16,11 +16,9 @@ constructor(private http: HttpClient) { }
    * @returns An Observable with the search results as a string
    */
   searchCodes(searchTerm: string): Observable<string> {
-    //console.log("apiUrl :", this.apiUrl);
-    //console.log("apiUrl0 :", this.apiUrl0);
-    return this.http.get(`${this.apiUrl}/chapitres`, {
+    //return this.http.get(`${this.apiUrl}/chapitres`, {
     //return this.http.get(`${this.apiUrl}/positions4`, {
-    //return this.http.get(`${this.apiUrl}/positions6`, {
+    return this.http.get(`${this.apiUrl}/positions6`, {
       params: { termeRecherche: searchTerm },
       responseType: 'text'
     });

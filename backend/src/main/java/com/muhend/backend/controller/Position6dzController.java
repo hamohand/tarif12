@@ -10,7 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/positions6dz")
+// --- IMPORTANT --- *******************************************************************
+// On supprime "/api" du mapping, car Traefik le gère déjà.
+// Spring ne verra que le chemin "/positions6dz".
+// Modifier @RequestMapping("/api/positions6dz")
+// ***********************************************************************************
+@RequestMapping("/positions6dz")
 public class Position6dzController {
 
     private final Position6DzRepository position6dzRepository;

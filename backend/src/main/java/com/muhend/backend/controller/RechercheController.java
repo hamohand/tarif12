@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @RestController
 // --- IMPORTANT --- *******************************************************************
 // On supprime "/api" du mapping, car Traefik le gère déjà.
-// Spring ne verra que le chemin "/chapitres".
+// Spring ne verra que le chemin "/recherche".
 // Modifier @RequestMapping("/api/recherche")
 // ***********************************************************************************
 @RequestMapping("/recherche")
