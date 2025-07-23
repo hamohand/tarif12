@@ -30,10 +30,10 @@ public class ChapitreController {
     }
 
     // Get all chapitres
-//    @GetMapping
-//    public Page<Chapitre> getAllChapitres(Pageable pageable) {
-//        return chapitreRepository.findAll(pageable);
-//    }
+    @GetMapping
+    public Page<Chapitre> getAllChapitres(Pageable pageable) {
+        return chapitreRepository.findAll(pageable);
+    }
 //    public List<Chapitre> getAllChapitres() {
 //        return chapitreRepository.findAll();
 //    }
@@ -42,11 +42,11 @@ public class ChapitreController {
      * Get all students
      * @return List of all students
      */
-    @GetMapping
-    public ResponseEntity<List<Chapitre>> getAllStudents() {
-        List<Chapitre> chapitres = chapitreService.getAllChapitres();
-        return new ResponseEntity<>(chapitres, HttpStatus.OK);
-    }
+//    @GetMapping
+//    public ResponseEntity<List<Chapitre>> getAllStudents() {
+//        List<Chapitre> chapitres = chapitreService.getAllChapitres();
+//        return new ResponseEntity<>(chapitres, HttpStatus.OK);
+//    }
 
     // Get a chapitre by id
     @GetMapping("/{id}")
