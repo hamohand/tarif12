@@ -1,10 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {ChapitresService} from '../services/chapitres.service';
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-chapitres',
   standalone: true,
-  imports: [],
+  imports: [
+    NgIf,
+    NgForOf
+  ],
   templateUrl: './chapitres.component.html',
   styleUrl: './chapitres.component.css'
 })

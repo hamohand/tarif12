@@ -13,10 +13,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-// --- CORRECTION ---
+// --- IMPORTANT --- *******************************************************************
 // On supprime "/api" du mapping, car Traefik le gère déjà.
 // Spring ne verra que le chemin "/chapitres".
-//@RequestMapping("/api/chapitres")
+// Modifier @RequestMapping("/api/chapitres")
+// ***********************************************************************************
 @RequestMapping("/chapitres")
 @CrossOrigin(origins = "http://localhost:4200") // Allow requests from any origin (for development)
 public class ChapitreController {
