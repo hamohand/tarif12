@@ -22,7 +22,7 @@ export class ChapitresService{
     constructor(private http: HttpClient) { }
 
     /**
-     * Get all students
+     * Get all chapitres
      * @returns An Observable with the list of all chapitres
      */
     getAllChapitres(): Observable<any[]> {

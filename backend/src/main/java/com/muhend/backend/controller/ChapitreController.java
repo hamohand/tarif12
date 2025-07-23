@@ -5,9 +5,12 @@ import com.muhend.backend.repository.ChapitreRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 import java.util.Optional;
@@ -24,9 +27,12 @@ public class ChapitreController {
 
     // Get all chapitres
     @GetMapping
-    public List<Chapitre> getAllChapitres() {
-        return chapitreRepository.findAll();
+    public Page<Chapitre> getAllChapitres(Pageable pageable) {
+        return chapitreRepository.findAll(pageable);
     }
+//    public List<Chapitre> getAllChapitres() {
+//        return chapitreRepository.findAll();
+//    }
 
     // Get a chapitre by id
     @GetMapping("/{id}")
