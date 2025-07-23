@@ -2,51 +2,36 @@ package com.muhend.backend.controller;
 
 import com.muhend.backend.model.Chapitre;
 import com.muhend.backend.repository.ChapitreRepository;
-import com.muhend.backend.service.ChapitreService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/chapitres")
+// --- CORRECTION ---
+// On supprime "/api" du mapping, car Traefik le gère déjà.
+// Spring ne verra que le chemin "/chapitres".
+//@RequestMapping("/api/chapitres")
+@RequestMapping("/chapitres")
+@CrossOrigin(origins = "http://localhost:4200") // Allow requests from any origin (for development)
 public class ChapitreController {
 
     private final ChapitreRepository chapitreRepository;
-    private final ChapitreService chapitreService;
 
-    public ChapitreController(ChapitreRepository chapitreRepository, ChapitreService chapitreService) {
-
+    public ChapitreController(ChapitreRepository chapitreRepository) {
         this.chapitreRepository = chapitreRepository;
-        this.chapitreService = chapitreService;
     }
 
     // Get all chapitres
     @GetMapping
-    public Page<Chapitre> getAllChapitres(Pageable pageable) {
-        return chapitreRepository.findAll(pageable);
+    public List<Chapitre> getAllChapitres() {
+        return chapitreRepository.findAll();
     }
-//    public List<Chapitre> getAllChapitres() {
-//        return chapitreRepository.findAll();
-//    }
-
-    /**
-     * Get all students
-     * @return List of all students
-     */
-//    @GetMapping
-//    public ResponseEntity<List<Chapitre>> getAllStudents() {
-//        List<Chapitre> chapitres = chapitreService.getAllChapitres();
-//        return new ResponseEntity<>(chapitres, HttpStatus.OK);
-//    }
 
     // Get a chapitre by id
     @GetMapping("/{id}")

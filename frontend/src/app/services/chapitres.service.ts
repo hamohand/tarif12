@@ -1,5 +1,5 @@
 import {Injectable, OnInit} from '@angular/core';
-import {HttpClient, HttpParams} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {environment} from "../../environments/environment";
 
@@ -25,18 +25,7 @@ export class ChapitresService{
      * Get all chapitres
      * @returns An Observable with the list of all chapitres
      */
-   /* getAllChapitres(): Observable<any[]> {
+    getAllChapitres(): Observable<any[]> {
         return this.http.get<any[]>(this.chapitresUrl);
-    }*/
-    /**
-    * Get all chapitres with pagination
-* @returns An Observable with a page of chapitres
-*/
-    getAllChapitres(page: number, size: number): Observable<any> {
-        const params = new HttpParams()
-            .set('page', page.toString())
-            .set('size', size.toString());
-        return this.http.get<any>(this.chapitresUrl, { params });
     }
-
 }
