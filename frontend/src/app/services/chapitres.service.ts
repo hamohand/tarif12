@@ -16,13 +16,13 @@ export class ChapitresService{
     private readonly apiUrl = environment.apiUrl;
     // URL de base pour la ressource
     //Chapitres
-   // private readonly chapitresUrl = `${this.apiUrl}/chapitres`;
+    private readonly chapitresUrl = `${this.apiUrl}/chapitres`;
     //Positions4
-    private readonly chapitresUrl = `${this.apiUrl}/positions4`;
+    //private readonly chapitresUrl = `${this.apiUrl}/positions4`;
     //Positions6
    // private readonly chapitresUrl = `${this.apiUrl}/positions6`;
 
-    //private apiUrl = '/api/chapitres'; // pour getAllChapitres
+    //private apiUrl = '/api/chapitres'; // pour le mode développement
 
     constructor(private http: HttpClient) { }
 

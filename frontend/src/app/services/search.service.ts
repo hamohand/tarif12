@@ -17,8 +17,8 @@ constructor(private http: HttpClient) { }
    */
   searchCodes(searchTerm: string): Observable<string> {
     //return this.http.get(`${this.apiUrl}/chapitres`, {
-    return this.http.get(`${this.apiUrl}/positions4`, {
-    //return this.http.get(`${this.apiUrl}/positions6`, {
+    //return this.http.get(`${this.apiUrl}/positions4`, {
+    return this.http.get(`${this.apiUrl}/positions6`, {
       params: { termeRecherche: searchTerm },
       responseType: 'text'
     });
