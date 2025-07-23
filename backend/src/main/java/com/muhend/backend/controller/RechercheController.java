@@ -309,7 +309,7 @@ public class RechercheController {
         return ragBuilder;
     }
 
-
+    // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     // OUTILS  Réponse IA :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     //Création d'un tableau Java à partir de la réponse de l'IA
     public List<String> conversionReponseIaToList(String cleanedJson){
